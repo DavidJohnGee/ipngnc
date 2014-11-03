@@ -14,7 +14,7 @@
 
 'Boilerplate ugliness'
 
-from ipng_ncclient.xml_ import *
+from ipngnc.xml_ import *
 
 from errors import OperationError, MissingCapabilityError
 
@@ -59,7 +59,7 @@ def build_filter(spec, capcheck=None):
     else:
 
         rep = validated_element(spec, ("filter", qualify("filter")))
-        # results in XMLError: line 105 ipng_ncclient/xml_.py - commented by earies - 5/10/13
+        # results in XMLError: line 105 ipngnc/xml_.py - commented by earies - 5/10/13
         #rep = validated_element(spec, ("filter", qualify("filter")),
         #                                attrs=("type",))
         # TODO set type var here, check if select attr present in case of xpath..

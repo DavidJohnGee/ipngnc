@@ -25,7 +25,7 @@ from lxml import etree
 # make sure you have the ElementTree v1.2.7+ lib as
 # well as lxml v3.0+
 
-from ipng_ncclient import NCClientError
+from ipngnc import NCClientError
 
 parser = etree.XMLParser(recover=True)
 

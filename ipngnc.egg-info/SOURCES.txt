@@ -7,7 +7,6 @@ ipngnc/xml_.py
 ipngnc.egg-info/PKG-INFO
 ipngnc.egg-info/SOURCES.txt
 ipngnc.egg-info/dependency_links.txt
-ipngnc.egg-info/requires.txt
 ipngnc.egg-info/top_level.txt
 ipngnc/devices/__init__.py
 ipngnc/devices/csr.py

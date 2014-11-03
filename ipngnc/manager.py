@@ -24,9 +24,9 @@ import transport
 
 import logging
 
-from ipng_ncclient.xml_ import *
+from ipngnc.xml_ import *
 
-logger = logging.getLogger('ipng_ncclient.manager')
+logger = logging.getLogger('ipngnc.manager')
 
 OPERATIONS = {
     "get": operations.Get,
@@ -48,9 +48,9 @@ OPERATIONS = {
 }
 
 """
-Dictionary of base method names and corresponding :class:`~ipng_ncclient.operations.RPC`
+Dictionary of base method names and corresponding :class:`~ipngnc.operations.RPC`
 subclasses. It is used to lookup operations, e.g. `get_config` is mapped to
-:class:`~ipng_ncclient.operations.GetConfig`. It is thus possible to add additional
+:class:`~ipngnc.operations.GetConfig`. It is thus possible to add additional
 operations to the :class:`Manager` API.
 """
 
@@ -71,10 +71,10 @@ def make_device_handler(device_params):
 
     device_name = device_params.get("name", "default")
     # Attempt to import device handler class. All device handlers are
-    # in a module called "ipng_ncclient.devices.<devicename>" and in a class named
+    # in a module called "ipngnc.devices.<devicename>" and in a class named
     # "<devicename>DeviceHandler", with the first letter capitalized.
     class_name          = "%sDeviceHandler" % device_name.capitalize()
-    devices_module_name = "ipng_ncclient.devices.%s" % device_name
+    devices_module_name = "ipngnc.devices.%s" % device_name
     dev_module_obj      = __import__(devices_module_name)
     handler_module_obj  = getattr(getattr(dev_module_obj, "devices"), device_name)
     class_obj           = getattr(handler_module_obj, class_name)
@@ -85,13 +85,13 @@ def make_device_handler(device_params):
 def connect_ssh(*args, **kwds):
     """
     Initialize a :class:`Manager` over the SSH transport.
-    For documentation of arguments see :meth:`ipng_ncclient.transport.SSHSession.connect`.
+    For documentation of arguments see :meth:`ipngnc.transport.SSHSession.connect`.
 
-    The underlying :class:`ipng_ncclient.transport.SSHSession` is created with
+    The underlying :class:`ipngnc.transport.SSHSession` is created with
         :data:`CAPABILITIES`. It is first instructed to
-        :meth:`~ipng_ncclient.transport.SSHSession.load_known_hosts` and then
+        :meth:`~ipngnc.transport.SSHSession.load_known_hosts` and then
         all the provided arguments are passed directly to its implementation
-        of :meth:`~ipng_ncclient.transport.SSHSession.connect`.
+        of :meth:`~ipngnc.transport.SSHSession.connect`.
 
     To invoke advanced vendor related operation add device_params =
         {'name':'<vendor_alias>'} in connection paramerers. For the time,
@@ -120,7 +120,7 @@ def connect_ioproc(*args, **kwds):
     if "device_params" in kwds:
         device_params = kwds["device_params"]
         del kwds["device_params"]
-        import_string = 'ipng_ncclient.transport.third_party.'
+        import_string = 'ipngnc.transport.third_party.'
         import_string += device_params['name'] + '.ioproc'
         third_party_import = __import__(import_string, fromlist=['IOProc'])
     else:
@@ -258,13 +258,13 @@ class Manager(object):
 
     @property
     def client_capabilities(self):
-        """:class:`~ipng_ncclient.capabilities.Capabilities` object representing
+        """:class:`~ipngnc.capabilities.Capabilities` object representing
         the client's capabilities."""
         return self._session._client_capabilities
 
     @property
     def server_capabilities(self):
-        """:class:`~ipng_ncclient.capabilities.Capabilities` object representing
+        """:class:`~ipngnc.capabilities.Capabilities` object representing
         the server's capabilities."""
         return self._session._server_capabilities
 
@@ -296,7 +296,7 @@ class Manager(object):
 
     raise_mode = property(fget=lambda self: self._raise_mode,
                           fset=__set_raise_mode)
-    """Specify which errors are raised as :exc:`~ipng_ncclient.operations.RPCError`
+    """Specify which errors are raised as :exc:`~ipngnc.operations.RPCError`
     exceptions. Valid values are the constants defined in
-    :class:`~ipng_ncclient.operations.RaiseMode`.
-    The default value is :attr:`~ipng_ncclient.operations.RaiseMode.ALL`."""
+    :class:`~ipngnc.operations.RaiseMode`.
+    The default value is :attr:`~ipngnc.operations.RaiseMode.ALL`."""

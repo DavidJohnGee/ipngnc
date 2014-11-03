@@ -12,9 +12,9 @@ generic information needed for interaction with a Netconf server.
 
 """
 
-from ipng_ncclient import DefaultDeviceHandler
-from ipng_ncclient.operations.third_party.juniper.rpc import GetConfiguration, LoadConfiguration, CompareConfiguration
-from ipng_ncclient.operations.third_party.juniper.rpc import ExecuteRpc, Command, Reboot, Halt, Commit
+from ipngnc import DefaultDeviceHandler
+from ipngnc.operations.third_party.juniper.rpc import GetConfiguration, LoadConfiguration, CompareConfiguration
+from ipngnc.operations.third_party.juniper.rpc import ExecuteRpc, Command, Reboot, Halt, Commit
 
 class JunosDeviceHandler(DefaultDeviceHandler):
     """

@@ -14,7 +14,7 @@
 
 "Locking-related NETCONF operations"
 
-from ipng_ncclient.xml_ import *
+from ipngnc.xml_ import *
 
 from rpc import RaiseMode, RPC
 
@@ -55,7 +55,7 @@ class LockContext(object):
 
     Any `rpc-error` will be raised as an exception.
 
-    Initialise with (:class:`Session <ipng_ncclient.transport.Session>`) instance and lock target.
+    Initialise with (:class:`Session <ipngnc.transport.Session>`) instance and lock target.
     """
 
     def __init__(self, session, device_handler, target):

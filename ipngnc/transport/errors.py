@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ipng_ncclient import NCClientError
+from ipngnc import NCClientError
 
 class TransportError(NCClientError):
     pass

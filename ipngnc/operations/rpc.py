@@ -15,13 +15,13 @@
 from threading import Event, Lock
 from uuid import uuid1
 
-from ipng_ncclient.xml_ import *
-from ipng_ncclient.transport import SessionListener
+from ipngnc.xml_ import *
+from ipngnc.transport import SessionListener
 
 from errors import OperationError, TimeoutExpiredError, MissingCapabilityError
 
 import logging
-logger = logging.getLogger("ipng_ncclient.operations.rpc")
+logger = logging.getLogger("ipngnc.operations.rpc")
 logger.setLevel(logging.WARNING)
 
 
@@ -241,9 +241,9 @@ class RPC(object):
 
     def __init__(self, session, device_handler, async=False, timeout=30, raise_mode=RaiseMode.NONE):
         """
-        *session* is the :class:`~ipng_ncclient.transport.Session` instance
+        *session* is the :class:`~ipngnc.transport.Session` instance
 
-        *device_handler" is the :class:`~ipng_ncclient.devices.*.*DeviceHandler` instance
+        *device_handler" is the :class:`~ipngnc.devices.*.*DeviceHandler` instance
 
         *async* specifies whether the request is to be made asynchronously, see :attr:`is_async`
 
@@ -409,7 +409,7 @@ class RPC(object):
 
     @property
     def session(self):
-        "The `~ipng_ncclient.transport.Session` object associated with this RPC."
+        "The `~ipngnc.transport.Session` object associated with this RPC."
         return self._session
 
     @property

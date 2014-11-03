@@ -14,7 +14,7 @@
 
 "Session-related NETCONF operations"
 
-from ipng_ncclient.xml_ import *
+from ipngnc.xml_ import *
 
 from rpc import RPC
 

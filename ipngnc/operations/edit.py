@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ipng_ncclient.xml_ import *
+from ipngnc.xml_ import *
 
 from rpc import RPC
 
@@ -20,7 +20,7 @@ import util
 
 import logging
 
-logger = logging.getLogger("ipng_ncclient.operations.edit")
+logger = logging.getLogger("ipngnc.operations.edit")
 
 "Operations related to changing device configuration"
 

@@ -4,12 +4,12 @@ Handler for default device information.
 Some devices require very specific information and action during client interaction.
 
 The "device handlers" provide a number of callbacks that return the necessary
-information. This allows the ipng_ncclient code to merely call upon this device handler -
+information. This allows the ipngnc code to merely call upon this device handler -
 once configured - instead of cluttering its code with if-statements.
 
 Initially, not much is dealt with by the handler. However, in the future, as more
 devices with specific handling are added, more handlers and more functions should be
-implememted here, so that the ipng_ncclient code can use these callbacks to fill in the
+implememted here, so that the ipngnc code can use these callbacks to fill in the
 device specific information.
 
 Note that for proper import, the classname has to be:

@@ -19,13 +19,13 @@ import re
 from Queue import Queue
 from threading import Thread, Lock, Event
 
-from ipng_ncclient.xml_ import *
-from ipng_ncclient.capabilities import Capabilities
+from ipngnc.xml_ import *
+from ipngnc.capabilities import Capabilities
 
 from errors import TransportError, SessionError
 
 import logging
-logger = logging.getLogger('ipng_ncclient.transport.session')
+logger = logging.getLogger('ipngnc.transport.session')
 logger.setLevel(logging.WARNING)
 
 

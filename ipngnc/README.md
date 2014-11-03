@@ -1,4 +1,4 @@
-ipng_ncclient 
+ipngnc 
 ====================================
 
 For the most, this is the standard Python NCClient developed by Shikar Bhushan and now maintained by Leonidas Poulopoulos. 
@@ -20,7 +20,7 @@ and post the data to the 'send_command' ncclient function.
 How do I use this?
 
 ```
-from ipng_ncclient import manager
+from ipngnc import manager
 
 from lxml import etree
       

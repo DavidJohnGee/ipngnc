@@ -19,7 +19,7 @@ from binascii import hexlify
 from cStringIO import StringIO
 from select import select
 
-from ipng_ncclient.capabilities import Capabilities
+from ipngnc.capabilities import Capabilities
 
 import paramiko
 
@@ -27,7 +27,7 @@ from errors import AuthenticationError, SessionCloseError, SSHError, SSHUnknownH
 from session import Session
 
 import logging
-logger = logging.getLogger("ipng_ncclient.transport.ssh")
+logger = logging.getLogger("ipngnc.transport.ssh")
 logger.setLevel(logging.WARNING)
 logging.getLogger("paramiko").setLevel(logging.DEBUG)
 

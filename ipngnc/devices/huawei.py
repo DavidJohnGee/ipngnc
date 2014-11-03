@@ -12,9 +12,9 @@ generic information needed for interaction with a Netconf server.
 
 """
 
-from ipng_ncclient.xml_ import BASE_NS_1_0
+from ipngnc.xml_ import BASE_NS_1_0
 
-from ipng_ncclient import DefaultDeviceHandler
+from ipngnc import DefaultDeviceHandler
 
 class HuaweiDeviceHandler(DefaultDeviceHandler):
     """

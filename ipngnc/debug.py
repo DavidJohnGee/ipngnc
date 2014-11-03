@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from ipng_ncclient.transport import SessionListener
+from ipngnc.transport import SessionListener
 
 class PrintListener(SessionListener):
 
