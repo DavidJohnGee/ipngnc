@@ -30,8 +30,8 @@ if sys.version_info[0] == 2 and sys.version_info[1] < 6:
     exit()
 
 #parse requirements
-req_lines = [line.strip() for line in open("requirements.txt").readlines()]
-install_reqs = list(filter(None, req_lines))
+#req_lines = [line.strip() for line in open("requirements.txt").readlines()]
+#install_reqs = list(filter(None, req_lines))
 
 
 setup(name='ipngnc',
@@ -42,7 +42,7 @@ setup(name='ipngnc',
       author_email="shikhar@schmizz.net, leopoul@noc.grnet.gr, earies@juniper.net, david.gee@ipengineer.net",
       url="https://github.com/DavidJohnGee/ipngnc",
       packages=find_packages('.'),
-      install_requires=install_reqs,
+      #install_requires=install_reqs,
       license="Apache License 2.0",
       platforms=["Posix; OS X; Windows"],
       keywords=('NETCONF', 'NETCONF Python client', 'Juniper Optimization', 'Cisco NXOS Optimization'),
